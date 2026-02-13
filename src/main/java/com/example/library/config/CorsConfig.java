@@ -14,9 +14,10 @@ public class CorsConfig {
       @Override
       public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/api/**")
-            .allowedOrigins("*") // Бүх domain-аас хүсэлт хүлээн авах
-            .allowedMethods("GET", "POST", "PUT", "DELETE")
-            .allowedHeaders("*");
+            .allowedOriginPatterns("*") // Бүх domain-аас хүсэлт хүлээн авах
+            .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+            .allowedHeaders("*")
+            .allowCredentials(false);
       }
     };
   }
